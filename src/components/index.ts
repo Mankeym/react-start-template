@@ -6,4 +6,5 @@ export { Header } from './Header/Header';
 export { Layout } from './Layout/Layout';
 export { Logo } from './Logo/Logo';
 export { Modal } from './Modal/Modal';
+export { ModalWithInput } from './ModalWithInput/ModalWithInput';
 export { StockStatus } from './StockStatus/StockStatus';

@@ -1,5 +1,8 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header } from './Header';
+import { Header } from '../components';
+import { ThemeProvider } from '../providers/themeProvider/themeProvider';
+import { LangProvider } from '../providers/langProvider/langProvider';
 
 const meta: Meta<typeof Header> = {
   title: 'Example/Header',
@@ -13,14 +16,12 @@ const meta: Meta<typeof Header> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const LoggedIn = {
-  args: {
-    user: {
-      name: 'Jane Doe',
-    },
-  },
-};
-
-export const LoggedOut: Story = {};
+const Theme = () => (
+  <LangProvider>
+    <ThemeProvider>
+      <Header />
+    </ThemeProvider>
+  </LangProvider>
+);
+export const Default = Theme.bind({});
